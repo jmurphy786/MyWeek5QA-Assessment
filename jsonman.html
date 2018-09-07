@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+    </style>
+</head>
+<body>
+<h1>Trainer Search!</h1>
+	<input type="name"
+		id = "Name"
+		placeholder = "Enter name..."
+		alt = "Enter Username"
+		required = "required"/>
+		
+<button id = "submit" onclick="getJSON()">submit</button>
+
+<input  type="name"
+		id = "Skills"
+		placeholder = "Enter skill..."
+		alt = "Enter skill"
+		required = "required"/>
+		
+<button id = "skillbut" onclick="getJSONSkills()">CheckSKill</button>
+
+<script src="data.js"></script>
+<p id = "storeinfo"></p>
+
+<script>
+
+function getJSON(){
+var d = document.getElementById("Name").value;
+var myH1 = document.createElement('p');
+var myH2 = document.createElement('p');
+var myH3 = document.createElement('p');
+var myH4 = document.createElement('p');
+var myH5 = document.createElement('p');
+var myH6 = document.createElement('p');
+var str = "";
+
+for (var names in data.members){
+	if(data.members[names].name == d){
+		var strname = str + "Name: " + data.members[names].name + "\n";
+		var strage = str + "Age:" + data.members[names].age + "\n";
+		var strident = str + "Secret Identity:" + data.members[names].secretIdentity + "\n";
+		var power1 =  str + "Power1:" + data.members[names].skills[0];
+		var power2 =  str + "Power2:" + data.members[names].skills[1];
+		var power3 =  str + "Power3:" + data.members[names].skills[2];
+	
+	}
+}
+myH1.textContent = strname;
+myH2.textContent = strage;
+myH3.textContent = strident;
+myH4.textContent = power1;
+myH5.textContent = power2;
+myH6.textContent = power3;
+
+
+window.document.getElementsByTagName("Body")[0].appendChild(myH1);
+window.document.getElementsByTagName("Body")[0].appendChild(myH2);
+window.document.getElementsByTagName("Body")[0].appendChild(myH3);
+window.document.getElementsByTagName("Body")[0].appendChild(myH4);
+window.document.getElementsByTagName("Body")[0].appendChild(myH5);
+window.document.getElementsByTagName("Body")[0].appendChild(myH6);
+}
+
+
+function getJSONSkills(){
+var e = document.getElementById("Skills").value;
+var myH7 = document.createElement('p');
+var str = "";
+
+for (var people in data.members){
+		if((data.members[people].skills[0] == e) || (data.members[people].skills[1] == e) || (data.members[people].skills[2] == e)){
+		    str = str + "Name: " + data.members[people].name + "\n";
+		}
+		else {
+		str += "";
+		}
+	}
+myH7.textContent = str;
+window.document.getElementsByTagName("Body")[0].appendChild(myH7);
+}
+</script>
+</body>
+</html>

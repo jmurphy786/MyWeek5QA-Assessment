@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+    </style>
+</head>
+<body>
+<h1>Form Data!</h1>
+
+<p id = "store"></p>
+
+<script>
+var name = (localStorage.getItem("Name"));
+var date = (localStorage.getItem("Date"));
+var address = (localStorage.getItem("Address"));
+var post = (localStorage.getItem("Post"));
+var email = (localStorage.getItem("Email"));
+var myH1 = document.createElement('p');
+var myH2 = document.createElement('p');
+var myH3 = document.createElement('p');
+var myH4 = document.createElement('p');
+var myH5 = document.createElement('p');
+
+myH1.textContent = "Name: " +name;
+myH2.textContent = "Date: " + date;
+myH3.textContent = "Address: " + address;
+myH4.textContent = "PostCode: " + post;
+myH5.textContent = "EmailAddress: " + email;
+
+
+
+window.document.getElementsByTagName("Body")[0].appendChild(myH1);
+window.document.getElementsByTagName("Body")[0].appendChild(myH2);
+window.document.getElementsByTagName("Body")[0].appendChild(myH3);
+window.document.getElementsByTagName("Body")[0].appendChild(myH4);
+window.document.getElementsByTagName("Body")[0].appendChild(myH5);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Main Page</title>
+	<meta CHARSET = "ISO-8859-1">
+		<link href="css/style.css"
+		rel="stylesheet"
+		type = "text/css"/>
+		<style>
+		html {
+		height: 100%;
+		}
+		body {background-color: white; color: black ;	min-height: 100%;}
+		.trainers {width:100%}
+		
+		.navbar a:hover {
+    background-color: #ddd; /* Grey background color */
+    color: black; /* Black text color */
+}
+		</style>
+	</head>	
+	
+<body>
+
+
+<div>
+<input id="JSON" onmouseover = getinvisJSON();>
+<input id="Forms" onmouseover = getinvisForms();>
+</div>
+
+<div class = "narbar">
+  <a href="jsonman.html" id = "JSONMan" onmouseover = changebckJSON(); onmouseleave = normalJSON();>JSONMan</a>
+    <a href="Contact.html" id = "Space2">-------------------</a>
+  <a href="EntryForm.html" id = "Entry"onmouseover = changebckEntry(); onmouseleave = normalEntry();>Entry</a>
+</div>
+
+<div class = "navbar2">
+  <a href="Contact.html" id = "Space">JSONMan_____________</a>
+  <a href="formdata.html" id = "FormData" onmouseover = changebckForm(); onmouseleave = normalForm();>FormData</a>
+</div>
+
+
+<script>
+	document.getElementById("JSONMan").style.visibility = "hidden";
+	document.getElementById("Entry").style.visibility = "hidden";
+	document.getElementById("FormData").style.visibility = "hidden";
+	document.getElementById("Space").style.visibility = "hidden";
+	document.getElementById("Space2").style.visibility = "hidden";
+	
+	document.getElementById("JSON").defaultValue = "JSON";
+	document.getElementById("Forms").defaultValue = "Forms";
+
+	function getinvisJSON(){
+	if (document.getElementById("JSONMan").style.visibility == "hidden")
+	{
+	document.getElementById("JSONMan").style.visibility = "visible";
+	}
+	else {
+	document.getElementById("JSONMan").style.visibility = "hidden";
+	}
+	}
+	
+	function getinvisForms(){
+	if(	document.getElementById("Entry").style.visibility == "hidden"){
+	document.getElementById("Entry").style.visibility = "visible";
+	document.getElementById("FormData").style.visibility = "visible";
+	}
+	else {
+	document.getElementById("Entry").style.visibility = "hidden";
+	document.getElementById("FormData").style.visibility = "hidden";
+	}
+	}
+
+	function changebckEntry(){
+	document.getElementById("Entry").style.backgroundColor = "red";
+	document.getElementById("Entry").innerHTML = "&Entry";
+	}
+	function normalEntry(){
+	document.getElementById("Entry").style.backgroundColor = "white";
+		document.getElementById("Entry").innerHTML = "Entry";
+	}
+	
+	function changebckJSON(){
+	document.getElementById("JSONMan").style.backgroundColor = "red";
+	document.getElementById("JSONMan").innerHTML = "&JSONMan";
+	}
+	function normalJSON(){
+	document.getElementById("JSONMan").style.backgroundColor = "white";
+		document.getElementById("JSONMan").innerHTML = "JSONMan";
+	}
+	function changebckForm(){
+	document.getElementById("FormData").style.backgroundColor = "red";
+	document.getElementById("FormData").innerHTML = "&FormData";
+	}
+	function normalForm(){
+	document.getElementById("FormData").style.backgroundColor = "white";
+	document.getElementById("FormData").innerHTML = "FormData";
+	}
+	
+	
+</script>
+
+
+</body>
+</html>
